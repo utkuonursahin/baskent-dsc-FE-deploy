@@ -1,0 +1,47 @@
+@use "../abstracts" as abs;
+.panel {
+  grid-column: main-start / main-end;
+  width: 100%;
+  height: 75vh;
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  & h1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / -1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    & span{
+      & a{
+        text-decoration: underline;
+        color: abs.$color-primary;
+      }
+      font-size: 1.6rem;
+    }
+  }
+  &__sidebar {
+    grid-column: 1 /2;
+    grid-row: 1 / -1;
+    background-color: rgba(abs.$color-white,.1);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    & h3{
+      padding: 2rem 0;
+      width: 100%;
+      border-bottom: .2rem solid abs.$color-tertiary;
+    }
+    &-list{
+      list-style: none;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      &-item{
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}

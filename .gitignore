@@ -37,12 +37,3 @@ next-env.d.ts
 
 # editor
 .idea
-# Extract the private components and their styles
-pages/admin
-src/components/Dashboard
-src/components/Sidebar
-src/context/AdminContext.js
-src/styles/layout/admin.scss
-src/styles/layout/dashboard.scss
-src/styles/layout/panel.scss
-src/styles/layout/popups.scss
