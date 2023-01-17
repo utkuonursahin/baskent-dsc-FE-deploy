@@ -20,7 +20,7 @@ export default function Panel(){
           withCredentials : true,
         });
         if(res.data) setIsLoggedIn(true);
-      }catch(error){alert(setError(error.response.data.message || error.response.data));}
+      }catch(error){setError(error.response.data.message || error.response.data)}
     })()
     //AUTOMATIC LOGOUT WHEN USER CLOSES THE TAB
     window.addEventListener('beforeunload', async (e) => {
