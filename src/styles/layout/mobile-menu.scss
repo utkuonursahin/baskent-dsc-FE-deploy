@@ -1,0 +1,84 @@
+@use "../abstracts" as abs;
+.mobile-menu{
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  visibility: hidden;
+  background: linear-gradient(to right top, abs.$color-primary 0%, abs.$color-secondary 100%);
+  width: 100%;
+  height: 100vh;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  @media only screen and (min-width: abs.$bp-medium){
+    display: none;
+  }
+  &--active{
+    visibility: visible;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+  }
+  &__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 75%;
+  }
+  &__link{
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: abs.$color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: abs.$font-secondary;
+  }
+  &-icon{
+    z-index: 3;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__checkbox{display: none;}
+    &__line{
+      display: block;
+      position: relative;
+      width: 3.5rem;
+      height: .25rem;
+      background-color: abs.$color-white;
+      &::before,&::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 3.5rem;
+        height: .25rem;
+        background-color: abs.$color-white;
+        transition: all .5s;
+      }
+      &::before{top: -1rem;}
+      &::after{top:1rem;}
+    }
+    &__checkbox:checked + &__line{
+      height: 0;
+    }
+    &__checkbox:checked + &__line::before{
+      top: 0;
+      transform: rotate(225deg);
+      background-color: abs.$color-white;
+    }
+    &__checkbox:checked + &__line::after{
+      top: 0;
+      transform: rotate(-225deg);
+      background-color: abs.$color-white;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use "../abstracts" as abs;
+.hero{
+  grid-column: main-start / main-end;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  &__description{
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: abs.$font-secondary;
+    color: abs.$color-white;
+    letter-spacing: 1.4px;
+    hyphens: auto;
+    word-break: break-all;
+  }
+}

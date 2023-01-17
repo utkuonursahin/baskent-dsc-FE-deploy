@@ -1,0 +1,57 @@
+@use "../abstracts" as abs;
+.faq{
+  grid-column: main-start / main-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+  &__question-container{
+    width: 100%;
+    min-height: 5rem;
+    border: .2rem solid abs.$color-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    font-family: abs.$font-secondary;
+    box-shadow: 0 0 .25rem .1rem abs.$color-secondary;
+  }
+  &__question{
+    width: 100%;
+    font-size: 1.6rem;
+    color: abs.$color-white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    & p{
+      width: 100%;
+      hyphens: auto;
+    }
+    & div.opened{
+      rotate: -180deg;
+      transition: all .25s ease-in-out;
+    }
+    & div.closed{
+        rotate: 0deg;
+        transition: all .25s ease-in-out;
+    }
+  }
+  &__answer{
+    color: abs.$color-tertiary;
+    overflow: hidden;
+    font-size: 1.5rem;
+    font-weight: abs.$font-thin;
+    padding: 0 1rem 1rem 1rem;
+    &.opened{
+      width: 100%;
+      display: block;
+    }
+    &.closed{
+      display: none;
+    }
+  }
+}

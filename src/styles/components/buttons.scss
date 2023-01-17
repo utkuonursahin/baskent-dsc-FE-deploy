@@ -1,0 +1,143 @@
+@use "../abstracts" as abs;
+.btn{
+  cursor: pointer;
+  width: min(30vw,10rem);
+  height: 4rem;
+  font-size: 1.4rem;
+  &-features{
+    padding: 0 .5rem;
+    border: none;
+    border-radius: .1rem;
+    background-color: #222222;
+    transform: skew(-5deg);
+    @media only screen and (min-width: abs.$bp-smallest){
+      width: min(15rem, 30vw);
+    }
+    & span{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: abs.$font-secondary;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: abs.$color-white;
+    }
+    &.active{
+      background-image: linear-gradient(to right, abs.$color-primary, abs.$color-tertiary, abs.$color-secondary);
+      & span{
+        transform: skew(5deg);
+        color: abs.$color-dark;
+      }
+    }
+  }
+  &-announcement{
+    width: min(12rem, 35vw);
+    height: 3.75rem;
+    letter-spacing: 1.3px;
+    background-color: rgba(abs.$color-tertiary, .75);
+    color: abs.$color-dark;
+    border: none;
+    border-radius: .5rem;
+    outline: none;
+    box-shadow: 0 0 1rem .25rem abs.$color-dark;
+    transition: all .2s ease-in-out;
+    &:hover{
+      background-color: abs.$color-dark;
+      color: abs.$color-primary;
+      box-shadow: 0 0 .25rem .15rem abs.$color-primary;
+    }
+  }
+  &-error{
+    background-color: abs.$color-dark;
+    color: abs.$color-white;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    border: none;
+    border-radius: .75rem;
+  }
+  &-cta{
+    width:14rem;
+    background-color: abs.$color-dark;
+    color: abs.$color-white;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-family: abs.$font-secondary;
+    border: none;
+    border-radius: .5rem;
+    position: relative;
+    box-shadow: 0 0 .25rem .15rem abs.$color-primary;
+    transition:all .2s ease-in-out;
+    &:hover{
+      background-color: abs.$color-primary;
+      color: abs.$color-dark;
+      box-shadow: 0 0 .25rem .15rem abs.$color-dark;
+    }
+  }
+  &-panel{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: abs.$color-white;
+    transition: all .1s ease-in-out;
+    font-family: abs.$font-secondary;
+    letter-spacing: 1.2px;
+    &:hover{
+      background-color: abs.$color-primary;
+      color: abs.$color-dark;
+    }
+    &.active{
+      background-color: abs.$color-primary;
+      color: abs.$color-dark;
+    }
+  }
+  &-create,&-update,&-delete{
+    width: 15rem;
+    border: none;
+    border-radius: .35rem;
+    background-color: transparent;
+    color: abs.$color-white;
+    transition: all .1s ease-in-out;
+    font-family: abs.$font-secondary;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+  }
+  &-create{
+    box-shadow: 0 0 0 .25rem abs.$color-primary;
+    &:hover{
+      background-color: abs.$color-primary;
+      color: abs.$color-dark;
+    }
+  }
+  &-update{
+    box-shadow: 0 0 0 .25rem #4ade80;
+    &:hover{
+      background-color: #4ade80;
+      color: abs.$color-dark;
+    }
+  }
+  &-delete{
+    box-shadow: 0 0 0 .25rem #dc2626;
+    &:hover{
+      background-color: #dc2626;
+    }
+  }
+  &-page{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    background-color: abs.$color-dark;
+    border: none;
+    transition: all .1s ease-in-out;
+    &:hover{
+      transform: scale(1.05);
+    }
+    & img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+

@@ -1,0 +1,23 @@
+[
+  {
+    "question": "Topluluğa katılmak için ne yapmalıyım?",
+    "answer": "Websayfamızın iletişim bölümünde bulunan 'Bize Katıl' butonuna tıklayarak aramıza katılabilirsin."
+  },
+  {
+    "question": "Yazılım tecrübem yok, katılabilir miyim?",
+    "answer": "Evet, katılabilirsin. Yazılım alanında tecrüben olmasa da, yazılım alanına ilgi duyman ve bu alanda kendini geliştirmek istemen bizim için yeterli."
+  },
+  {
+    "question": "Yazılım tecrübem var, DSC bana neler sunabilir?",
+    "answer": "Topluluk içerisindeki proje takımlarına dahil olarak veya kendi takımını kurarak takım arkadaşlarınla birlikte projeler geliştirebilir, takım çalışmasını deneyimleyebilir, yarışmalara katılabilirsin. Ayrıca topluluk içerisindeki etkinliklere katılarak, diğer üyelerle tanışabilir, çevreni genişletebilirsin."
+  },
+  {
+    "question": "Google Developer Student Clubs ile bir bağınız var mı?",
+    "answer": "Hayır, Google Developer Student Clubs ile bir bağımız yok. Başkent DSC, sadece Başkent Üniversitesi öğrencilerine özgü bir topluluktur."
+  },
+  {
+    "question": "Yapmayı planladığınız etkinlikler neler?",
+    "answer": "Yazılım alanında konuşmalar, workshoplar, hackathonlar, yarışmalar, proje geliştirme ve daha birçok etkinliği planlıyoruz. Sosyal medya hesaplarımızı ve websitemizin duyurular kısmını takip ederek güncel etkinliklerden haberdar olabilirsin."
+  }
+
+]

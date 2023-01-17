@@ -1,0 +1,82 @@
+@use "../abstracts" as abs;
+.executives{
+  grid-column: main-start / main-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  & .swiper{
+    width: 50vw;
+    height: 70vw;
+    padding: .25rem;
+    @media only screen and (min-width: abs.$bp-smallest){
+      width: 30vw;
+      height: 40vw;
+    }
+    @media only screen and (min-width: abs.$bp-medium){
+      width: 30%;
+      height: 35rem;
+    }
+    @media only screen and (min-width: abs.$bp-large){
+      width: 23rem;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 1;
+      background: linear-gradient(to right, abs.$color-primary, abs.$color-tertiary,abs.$color-secondary);
+      border-radius: .75rem;
+    }
+    &-wrapper{
+      & .swiper-slide{
+        border-radius: .5rem;
+        background-color: abs.$color-dark;
+        position: relative;
+      }
+      & .slider-content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & img{
+          width: inherit;
+          height: 75%;
+          object-fit: cover;
+          object-position: top;
+        }
+        & div{
+          margin: auto 0;
+          height: min-content;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          & span{
+            font-size: 1.3rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            font-family: abs.$font-secondary;
+            font-weight: abs.$font-bold;
+            background-image: linear-gradient(to right, abs.$color-primary, abs.$color-tertiary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            @media only screen and (min-width: abs.$bp-smallest){font-size: 1.6rem;}
+          }
+        }
+      }
+    }
+    &-button-prev{
+      position: absolute;
+      left: -25%;
+      color: abs.$color-tertiary;
+    }
+    &-button-next{
+      position: absolute;
+      right: -25%;
+      color: abs.$color-tertiary;
+    }
+  }
+}

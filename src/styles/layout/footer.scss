@@ -1,0 +1,27 @@
+@use "../abstracts" as abs;
+.footer{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  & span{
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+    &:not(a){
+      color: rgba(abs.$color-white,.5)
+    }
+  }
+  & img{
+    width: 9rem;
+    height: 3rem;
+    object-fit: cover;
+    opacity: .5;
+  }
+  & a{
+    color: abs.$color-tertiary;
+    &:hover{
+      opacity: .8;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "../abstracts" as abs;
+.heading-1{
+  font-size: 2.9rem;
+  color: abs.$color-white;
+  text-align: center;
+  font-family: abs.$font-secondary;
+  font-weight: abs.$font-thin;
+  letter-spacing: 1.3px;
+  @media only screen and (min-width: abs.$bp-medium){
+    font-size: 3.3rem;
+  }
+}
+
+.heading-2{
+  font-size: 2.6rem;
+  background-image: linear-gradient(to right, abs.$color-primary, abs.$color-tertiary, abs.$color-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  @media only screen and (min-width: abs.$bp-medium){
+    font-size: 3rem;
+  }
+}
+
+.heading-3{
+  font-size: min(1.6rem, 5vw);
+  text-transform: uppercase;
+  color: abs.$color-white;
+  text-align: center;
+}
+
+.heading-4{
+  font-size: min(1.5rem, 5vw);
+  color: abs.$color-white;
+  white-space: nowrap;
+  letter-spacing: 1.4px;
+  @media only screen and (min-width: abs.$bp-smallest){
+    font-size: min(1.8rem, 7vw);
+  }
+}

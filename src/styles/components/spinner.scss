@@ -1,0 +1,11 @@
+@use "../abstracts" as abs;
+.spinner{
+  height: 100%;
+  width: 2.5rem;
+  fill: abs.$color-white;
+  -webkit-animation: .8s rotate infinite linear;
+  animation: .8s rotate infinite linear;
+}
+
+@keyframes rotate { 100%{transform: rotate(360deg)} }
+@-webkit-keyframes rotate { 100%{transform: rotate(360deg)} }
