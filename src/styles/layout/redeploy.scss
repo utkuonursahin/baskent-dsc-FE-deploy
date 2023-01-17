@@ -1,0 +1,19 @@
+@use "../abstracts" as abs;
+.redeploy{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  & p{
+    text-align: justify;
+    font-size: 1.6rem;
+    color: abs.$color-white;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    & span{
+      color: abs.$color-primary;
+      font-weight: abs.$font-bold;
+    }
+  };
+}
