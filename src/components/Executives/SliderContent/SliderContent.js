@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function SliderContent({data}) {
   const loadImg = ({ src}) => {
-    return `http://localhost:8888/static/images/executives/${src}`
+    return `${process.env.NEXT_PUBLIC_API_HOST}static/images/executives/${src}`
   }
   return (
     <div className="slider-content">

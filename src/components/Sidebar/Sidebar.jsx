@@ -23,6 +23,13 @@ const Sidebar = () => {
       await router.push("/admin");
     },1000)
   }
+  const handleRedeploy = async () => {
+    await axios({
+      method: 'POST',
+      url:`${process.env.NEXT_PUBLIC_REDEPLOY_URL}`,
+      withCredentials : true,
+    });
+  }
   return (
     <nav className="panel__sidebar">
       <h3 className="heading-3">Panel Menü</h3>
@@ -47,6 +54,9 @@ const Sidebar = () => {
         </li>
         <li className="panel__sidebar-list-item" data-tab="faq">
           <button className="btn btn-panel">S.S.S</button>
+        </li>
+        <li className="panel__sidebar-list-item" onClick={handleRedeploy}>
+          <button className="btn btn-panel">Redeploy</button>
         </li>
         <li className="panel__sidebar-list-item" onClick={handleLogout}>
           <button className="btn btn-panel">Çıkış Yap</button>
