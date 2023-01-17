@@ -3,7 +3,7 @@ const Redeploy = () => {
   const handleRedeploy = async () => {
     await axios({
       method: 'POST',
-      url:`${process.env.NEXT_PUBLIC_REDEPLOY_URL}`,
+      url:`${process.env.NEXT_PUBLIC_API_URL}users/redeploy`,
       withCredentials : true,
     });
   }
