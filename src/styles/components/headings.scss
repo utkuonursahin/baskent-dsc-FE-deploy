@@ -38,3 +38,19 @@
     font-size: min(1.8rem, 7vw);
   }
 }
+
+.heading-slogan{
+  text-transform: uppercase;
+  position: relative;
+  @media only screen and (min-width: abs.$bp-medium){margin-bottom: 3rem;}
+  &::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 105%;
+    width: 100%;
+    height: .5rem;
+    background-color: abs.$color-primary;
+    transform: skew(-25deg) translate(-50%, 0);
+  }
+}

@@ -1,11 +1,20 @@
 import axios from "axios";
+import {useAdmin} from "../../../context/AdminContext";
+import {useError} from "../../../context/ErrorContext";
 const Redeploy = () => {
+  const {setType} = useAdmin();
+  const {setError} = useError();
   const handleRedeploy = async () => {
-    await axios({
-      method: 'POST',
-      url:`${process.env.NEXT_PUBLIC_API_URL}users/redeploy`,
-      withCredentials : true,
-    });
+    try{
+      await axios({
+        method: 'POST',
+        url:`${process.env.NEXT_PUBLIC_API_URL}users/redeploy`,
+        withCredentials : true,
+      });
+      setType("panel");
+    }catch(err){
+      setError(err.response.data.message);
+    }
   }
   return (
     <div className="redeploy">

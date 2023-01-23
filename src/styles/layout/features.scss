@@ -34,7 +34,8 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 12rem;
+    min-height: 13rem;
+    gap: 2rem;
     &-element{
       width: 100%;
       display: none;

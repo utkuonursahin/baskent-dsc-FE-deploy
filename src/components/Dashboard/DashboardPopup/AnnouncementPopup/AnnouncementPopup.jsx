@@ -44,7 +44,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
     switch(mode){
       case "create":
         try{
-          const {data:res} = await axios({
+          await axios({
             method: 'POST',
             url:`${process.env.NEXT_PUBLIC_API_URL}${type}`,
             withCredentials : true,
@@ -63,7 +63,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
         break;
       case "update":
         try{
-          const {data:res} = await axios({
+          await axios({
             method: 'PATCH',
             headers:{'Content-Type': 'multipart/form-data'},
             url:`${process.env.NEXT_PUBLIC_API_URL}${type}/${id}`,
@@ -76,7 +76,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
         break;
       case "delete":
         try{
-          const {data:res} = await axios({
+          await axios({
             method: 'DELETE',
             url:`${process.env.NEXT_PUBLIC_API_URL}${type}/${id}`,
             withCredentials : true,

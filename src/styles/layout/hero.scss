@@ -1,5 +1,6 @@
 @use "../abstracts" as abs;
 .hero{
+  margin-top: 10rem;
   grid-column: main-start / main-end;
   display: flex;
   flex-direction: column;
@@ -11,8 +12,10 @@
     font-size: 1.6rem;
     font-family: abs.$font-secondary;
     color: abs.$color-white;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
+    word-spacing: 1.2px;
+    line-height: 2.25rem;
     hyphens: auto;
-    word-break: break-all;
+    text-align: justify;
   }
 }
