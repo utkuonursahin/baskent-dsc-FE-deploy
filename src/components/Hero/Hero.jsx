@@ -1,7 +1,7 @@
 const Hero = ({containerRef}) => {
   return (
     <section lang="tr" className="hero" ref={containerRef} id="hero">
-      <h1 className="heading-1 heading-slogan">Develope Together</h1>
+      <h1 className="heading-1 heading-slogan">Develop Together</h1>
       <h2 className="heading-2">Hakkımızda</h2>
       <p className="hero__description" lang="tr">
         DSC (Developer Students Community) ya da Türkçe ismiyle Yazılım Geliştirici Öğrenciler Topluluğu,

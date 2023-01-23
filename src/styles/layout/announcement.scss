@@ -1,6 +1,5 @@
 @use "../abstracts" as abs;
 .announcement {
-  height: 100%;
   grid-column: main-start / main-end;
   display: flex;
   flex-direction: column;
