@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Announcement ({announcement}) {
-  const loadImg = ({ src, width}) => {return `${process.env.NEXT_PUBLIC_HOST}static/images/announcements/${src}?w=${width}`}
+  const loadImg = ({ src, width}) => {return `${process.env.NEXT_PUBLIC_API_HOST}static/images/announcements/${src}?w=${width}`}
   return (
     <div className="page-wrapper">
       <Head>

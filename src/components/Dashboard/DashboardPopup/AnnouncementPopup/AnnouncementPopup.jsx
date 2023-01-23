@@ -39,7 +39,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
     formData.append("description",state.description);
     formData.append("summary",state.summary);
     formData.append("date",state.date);
-    formData.append("imageCover",state.image);
+    formData.append('imageCover',state.image);
     formData.append("link",state.link);
     switch(mode){
       case "create":
