@@ -13,6 +13,7 @@
     color: abs.$color-white;
   }
   &__socials{
+    z-index: 2;
     display: flex;
     align-items: center;
     gap: 2rem;
