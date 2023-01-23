@@ -6,7 +6,7 @@ function SliderContent({data}) {
   }
   return (
     <div className="slider-content">
-      <Image width={100} height={100} src={`${data.photo}`} loader={loadImg} alt="Announcement Photo" className="slider-content__image"/>
+      <Image width={100} height={100} src={`${data.photo}`} loader={loadImg} alt="Announcement Photo" crossorigin="anonymous" className="slider-content__image"/>
       <div>
         <h4 className="heading-4">{data.name}</h4>
         <span className="slider-content__position">{data.title}</span>
