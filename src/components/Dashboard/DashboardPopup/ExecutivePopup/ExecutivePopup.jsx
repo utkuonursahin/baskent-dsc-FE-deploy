@@ -31,7 +31,7 @@ const ExecutivePopup = ({mode, setIsOpened}) => {
     e.preventDefault();
     formData.append("name",state.name);
     formData.append("title",state.title);
-    formData.append("imageCover",state.image);
+    formData.append('photo',state.image);
     switch(mode){
       case "create":
         try{
