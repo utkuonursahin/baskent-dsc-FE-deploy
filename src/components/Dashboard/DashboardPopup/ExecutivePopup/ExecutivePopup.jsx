@@ -21,7 +21,7 @@ const ExecutivePopup = ({mode, setIsOpened}) => {
       return {
         name: currentExecutive?.name,
         title: currentExecutive?.title,
-        image: currentExecutive?.image,
+        image: currentExecutive?.photo,
       }
     } else return {name: '', title: '', image: ''}
   }

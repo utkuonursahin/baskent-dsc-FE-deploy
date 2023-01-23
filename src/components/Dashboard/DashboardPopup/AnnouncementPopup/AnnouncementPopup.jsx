@@ -26,7 +26,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
         description: currentAnnouncement?.description,
         summary: currentAnnouncement?.summary,
         date: currentAnnouncement?.date,
-        image: currentAnnouncement?.image,
+        image: currentAnnouncement?.imageCover,
         link: currentAnnouncement?.link,
       }
     } else return {name: '', description: '', summary: '', date: '', image: '', link: ''}
