@@ -50,7 +50,7 @@ export default function ForgotPassword () {
         <footer className="footer">
           <span>
             Built by <Link href="https://www.linkedin.com/in/utku-onur-sahin/">Utku Onur Sahin</Link> in the name of DSC.<br/>
-            All rights reserved.
+            All rights reserved © 2023
           </span>
           <img src="/logo-white.svg" alt="DSC Logo" className="footer__logo"/>
         </footer>
