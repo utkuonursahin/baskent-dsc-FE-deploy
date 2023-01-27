@@ -20,7 +20,7 @@ export default function Home({initAnnouncements, initExecutives}) {
   return (
     <div className="page-wrapper">
       <Head>
-        <title>Developer Students Community -Derslerle Yetinmeyenlere!-</title>
+        <title>Developer Students Community -Develop Together!-</title>
         <meta name="description" content="Başkent Üniversitesi Developer Students Community Websitesi" />
         <meta charSet="UTF-8"/>
         <link rel="icon" href="/logo-blue.svg"/>
