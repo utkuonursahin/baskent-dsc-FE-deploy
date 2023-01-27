@@ -21,7 +21,8 @@ export default function Home({initAnnouncements, initExecutives}) {
     <div className="page-wrapper">
       <Head>
         <title>Developer Students Community -Develop Together!-</title>
-        <meta name="description" content="Başkent Üniversitesi Developer Students Community Websitesi" />
+        <meta name="description" content="Başkent Üniversitesi Developer Students Community veya kısaca Başkent DSC
+        öğrenci topluluğunun resmi websayfası. Buradan toplulukla ilgili detaylı bilgiye ulaşılabilir." />
         <meta charSet="UTF-8"/>
         <link rel="icon" href="/logo-blue.svg"/>
       </Head>

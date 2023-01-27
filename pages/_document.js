@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="tr">
       <Head>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik&display=swap" rel="stylesheet"/>
       </Head>
