@@ -14,7 +14,7 @@ const Announcements = () => {
         if(!response.results) return
         const newAnnouncements = response?.data?.data
         if(newAnnouncements.length) setAnnouncements([...announcements,...newAnnouncements])
-      }catch(error){setError(error.response?.data.message)}
+      }catch(error){setError(error.response?.data.message || error.response.data)}
     })();
   },[page, setError, setAnnouncements]);
   return (
