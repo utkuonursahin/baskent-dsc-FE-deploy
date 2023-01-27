@@ -6,6 +6,7 @@
   align-items: center;
   gap: 1rem;
   z-index: 1;
+  & h2{margin-bottom: 1rem;}
   &__question-container{
     width: 100%;
     min-height: 5rem;
@@ -17,6 +18,9 @@
     border-radius: .5rem;
     font-family: abs.$font-secondary;
     box-shadow: 0 0 .25rem .1rem abs.$color-secondary;
+    @media only screen and (min-width: abs.$bp-medium){
+      width: 70rem;
+    }
   }
   &__question{
     width: 100%;
@@ -27,6 +31,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    cursor: pointer;
     & p{
       width: 100%;
       hyphens: auto;
@@ -46,6 +51,7 @@
     font-size: 1.5rem;
     font-weight: abs.$font-thin;
     padding: 0 1rem 1rem 1rem;
+    cursor: default;
     &.opened{
       width: 100%;
       display: block;

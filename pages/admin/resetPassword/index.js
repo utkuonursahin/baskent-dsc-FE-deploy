@@ -30,7 +30,7 @@ export default function ResetPassword () {
     return (
         <div className="page-wrapper">
         <Head>
-            <title>Developer Students Community -Derslerle Yetinmeyenlere!-</title>
+            <title>Developer Students Community -Develop Together!-</title>
             <meta name="description" content="Başkent Üniversitesi Developer Students Community Websitesi" />
             <link rel="icon" href="/logo-blue.svg" />
         </Head>

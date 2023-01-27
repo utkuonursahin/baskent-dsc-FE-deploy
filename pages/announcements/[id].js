@@ -9,8 +9,8 @@ export default function Announcement ({announcement}) {
   return (
     <div className="page-wrapper">
       <Head>
-        <title>Developer Students Community -Derslerle Yetinmeyenlere!-</title>
-        <meta name="description" content="Başkent Üniversitesi Developer Students Community Websitesi" />
+        <title>Bir Duyurumuz Var!</title>
+        <meta name="description" content="Başkent Üniversitesi Developer Students Community Duyuru Sayfası" />
         <link rel="icon" href="/logo-blue.svg" />
       </Head>
       <Header/>
