@@ -11,9 +11,9 @@ function SliderContent({data}) {
       <Image width={100} height={100} src={`${data.imageCover}`}
              loader={loadImg} alt="Announcement Photo" crossorigin="anonymous"
              className="slider-content__image" sizes="
-             (max-width: 640px) 90vw,
-             (max-width: 1024px) 80vw,
-             (min-width: 1025px) 100%"/>
+             (min-width: 640px) 80vw,
+             (min-width: 1024px) 100%,
+             90vw"/>
       <Link href={`/announcements/${data.id}`} passHref legacyBehavior ><button className="btn btn-announcement">Devamını oku</button></Link>
     </div>
   );
