@@ -8,9 +8,14 @@ import {useAnnouncement} from "../../../context/AnnouncementContext";
 
 function SliderContainer() {
   const {announcements, setPage} = useAnnouncement();
+  //Handle Real Index Change
+  const handleRIC = (swiper) => {
+    if((swiper.realIndex+1) === announcements.length - 3) {
+        return setPage((prevPage) => prevPage + 1);
+    }
+  };
   return (
-    <Swiper modules={[Pagination, EffectFade]} pagination={{dynamicBullets:true}} spaceBetween={100} slidesPerView={1} effect={"fade"}
-            onActiveIndexChange={(swiper) => {(swiper.activeIndex + 1) % 3 === 0 && setPage(()=>swiper.activeIndex)}}>
+    <Swiper modules={[Pagination, EffectFade]} pagination={{dynamicBullets:true}} spaceBetween={100} slidesPerView={1} effect={"fade"} onRealIndexChange={handleRIC}>
       {announcements.map((announcement,i) => {
         return (
           <SwiperSlide key={announcement.id + i}>
