@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import SliderContainer from "./SliderContainer/SliderContainer";
 import {useError} from "../../context/ErrorContext";
 import axios from "axios";
-import Image from "next/image";
+import Spinner from "../Spinner/Spinner";
 const Announcements = () => {
   const {page, announcements, setAnnouncements} = useAnnouncement();
   const {setError} = useError()
@@ -20,7 +20,7 @@ const Announcements = () => {
   return (
     <section className="announcements" id="announcements">
       <h2 className="heading-2">Duyurular</h2>
-      {announcements ? <SliderContainer/> : <Image width={50} height={50} className="spinner" src="/spinner.svg" alt="spinner icon"/>}
+      {announcements ? <SliderContainer/> : <Spinner/>}
     </section>
   );
 };
