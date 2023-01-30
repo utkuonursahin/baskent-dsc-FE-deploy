@@ -2,7 +2,7 @@ import Image from 'next/image';
 const Hero = ({containerRef}) => {
   return (
     <section lang="tr" className="hero" ref={containerRef} id="hero">
-      <Image src="/circuit-board.svg" alt="bg vector" width={100} height={100} className="background-vectors"/>
+      <Image src="/circuit-board.svg" alt="bg vector" width={100} height={100} className="background-vectors background-vectors--top"/>
       <h1 className="heading-1 heading-slogan">Develop Together</h1>
       <h2 className="heading-2">Hakkımızda</h2>
       <p className="hero__description" lang="tr">
