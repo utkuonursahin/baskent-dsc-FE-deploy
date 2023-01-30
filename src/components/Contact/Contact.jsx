@@ -4,7 +4,7 @@ import Image from "next/image";
 const Contact = () => {
   return (
     <section className="contact" id="contact">
-      <Image src="/icon-grid.svg" alt="bg vector" width={100} height={100} className="background-vectors background-vectors--bottom"/>
+      <Image src="/hexagon.svg" alt="bg vector" width={100} height={100} className="background-vectors background-vectors--bottom"/>
       <h2 className="heading-2">İletişim</h2>
       <p>Sosyal medya hesaplarımızı takip edebilir, aşağıdaki buton ile direkt olarak bize ulaşabilirsin!</p>
       <div className="contact__socials">
