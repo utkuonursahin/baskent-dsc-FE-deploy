@@ -24,7 +24,7 @@
   }
   &__question{
     width: 100%;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: abs.$color-white;
     padding: 1rem;
     display: flex;
@@ -48,7 +48,7 @@
   &__answer{
     color: abs.$color-tertiary;
     overflow: hidden;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: abs.$font-thin;
     padding: 0 1rem 1rem 1rem;
     cursor: default;
