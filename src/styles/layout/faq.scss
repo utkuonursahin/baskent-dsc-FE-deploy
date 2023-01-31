@@ -32,6 +32,9 @@
     align-items: center;
     gap: 2rem;
     cursor: pointer;
+    @media only screen and (min-width: abs.$bp-medium){
+      font-size: 1.6rem;
+    }
     & p{
       width: 100%;
       hyphens: auto;
@@ -52,6 +55,9 @@
     font-weight: abs.$font-thin;
     padding: 0 1rem 1rem 1rem;
     cursor: default;
+    @media only screen and (min-width: abs.$bp-medium){
+      font-size: 1.5rem;
+    }
     &.opened{
       width: 100%;
       display: block;
