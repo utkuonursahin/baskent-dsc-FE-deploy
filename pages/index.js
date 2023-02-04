@@ -24,6 +24,7 @@ export default function Home({initAnnouncements, initExecutives}) {
         <meta name="description" content="Başkent Üniversitesi Developer Students Community veya kısaca Başkent DSC
         öğrenci topluluğunun resmi websayfası. Buradan toplulukla ilgili detaylı bilgiye ulaşılabilir." />
         <meta charSet="UTF-8"/>
+        <meta name="ROBOTS" content"NOODP, NOYDIR"/>
         <link rel="icon" href="/logo-blue.svg"/>
       </Head>
       <Header elementRef={elementRef}/>
