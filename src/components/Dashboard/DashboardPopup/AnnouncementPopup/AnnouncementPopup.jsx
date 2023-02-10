@@ -54,7 +54,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
               summary:state.summary,
               date:state.date,
               imageCover:"UPDATE ME ASAP!",
-              link:state.link
+              link: (state.link || '/')
             }
           });
           setIsChanged(prev=>!prev)
@@ -89,7 +89,6 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
         break;
     }
   }
-  console.log(state.date)
   return (
     <form action="#" className="announcement-popup" onSubmit={handleSubmit}>
       <div>
