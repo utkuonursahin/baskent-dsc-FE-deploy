@@ -13,7 +13,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
       case 'name': return {...state, name: action.value};
       case 'description': return {...state, description: action.value};
       case 'summary': return {...state, summary: action.value};
-      case 'date': return {...state, date: action.value};
+      case 'date': return {...state, date: action.value.toLocaleString().slice(0,10)};
       case 'image': return {...state, image: action.value};
       case 'link': return {...state, link: action.value};
       default: return state;
@@ -102,7 +102,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
         </label>
         <label htmlFor="date">
           <span>Date</span>
-          <input type="date" id="date" required={true} value={new Date(state.date).toLocaleString('en-CA').slice(0,10)} onChange={(e)=>dispatch({type:"date",value:e.target.value})}/>
+          <input type="date" id="date" required={true} value={state.date} onChange={(e)=>dispatch({type:"date",value:e.target.value})}/>
         </label>
         <label htmlFor="link">
           <span>Link</span>
