@@ -1,7 +1,7 @@
 import Link from "next/link";
 function MobileMenu() {
   return (
-    <div className="hamburger-menu">
+    <>
       <label htmlFor="hamburger-menu-icon" className="hamburger-menu-icon">
         <input id="hamburger-menu-icon" type="checkbox"/>
       </label>
@@ -30,8 +30,7 @@ function MobileMenu() {
           </li>
         </ul>
       </nav>
-    </div>
-
+    </>
   );
 }
 
