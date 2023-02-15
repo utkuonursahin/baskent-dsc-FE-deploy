@@ -39,6 +39,6 @@ export async function getStaticProps({params}) {
 }
 export async function getStaticPaths() {
   const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}announcements`);
-  const paths = response.data.data.data.map((announcement) => ({params: { id: announcement.id},}))
+  const paths = response.data.data.data.map((announcement) => ({params: { id: announcement.id}}))
   return {paths,fallback:false}
 }
