@@ -5,9 +5,6 @@
   flex-direction: column;
   gap: .75rem;
   width: max-content;
-  position: absolute;
-  top: 2.5rem;
-  right: 2rem;
   z-index: 2;
   cursor: pointer;
   @media only screen and (min-width: abs.$bp-medium){
