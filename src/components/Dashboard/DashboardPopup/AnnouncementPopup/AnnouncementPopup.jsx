@@ -16,6 +16,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
       case 'date': return {...state, date: action.value.toLocaleString().slice(0,10)};
       case 'image': return {...state, image: action.value};
       case 'link': return {...state, link: action.value};
+      case 'linkBtnText': return {...state, linkBtnText: action.value};
       default: return state;
     }
   }
@@ -28,8 +29,9 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
         date: currentAnnouncement?.date.toLocaleString().slice(0,10),
         image: currentAnnouncement?.imageCover,
         link: currentAnnouncement?.link,
+        linkBtnText: currentAnnouncement?.linkBtnText
       }
-    } else return {name: '', description: '', summary: '', date: '', image: '', link: ''}
+    } else return {name: '', description: '', summary: '', date: '', image: '', link: '', linkBtnText: ''}
   }
   const [state, dispatch] = useReducer(reducer,null,initializer);
   const formData = new FormData();
@@ -41,6 +43,7 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
     formData.append("date",state.date);
     formData.append('imageCover',state.image);
     formData.append("link",state.link);
+    formData.append("linkBtnText",state.linkBtnText);
     switch(mode){
       case "create":
         try{
@@ -54,7 +57,8 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
               summary:state.summary,
               date:state.date,
               imageCover:"UPDATE ME ASAP!",
-              link: (state.link || '/')
+              link: (state.link || '/'),
+              linkBtnText:state.linkBtnText
             }
           });
           setIsChanged(prev=>!prev)
@@ -107,6 +111,10 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
         <label htmlFor="link">
           <span>Link</span>
           <input type="text" id="link" placeholder="Announcement link:" value={state.link} onChange={(e)=>dispatch({type:"link",value:e.target.value})}/>
+        </label>
+        <label htmlFor="link-button-text">
+          <span>Link Button Text</span>
+          <input type="text" id="link-button-text" placeholder="Announcement link button text:" value={state.linkBtnText} onChange={(e)=>dispatch({type:"linkBtnText",value:e.target.value})}/>
         </label>
       </div>
       <textarea placeholder="Description" required={true} value={state.description?.replace(/\\n/g, '\n')} onChange={(e)=>dispatch({type:"description",value:e.target.value})}/>

@@ -41,6 +41,7 @@ body{
 }
 
 .main{
+  padding-top: 10rem;
   display: grid;
   grid-template-columns: 1rem [main-start] 1fr [main-end] 1rem;
   grid-auto-rows: min-content;

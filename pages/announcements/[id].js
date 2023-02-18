@@ -20,7 +20,7 @@ export default function Announcement ({announcement}) {
           <Image width={100} height={100} src={`${announcement.imageCover}`} loader={loadImg} alt="Announcement Photo" className="slider-content__image"/>
           <p className="announcement__summary">{announcement.summary}</p>
           <p className="announcement__description">{announcement.description.replace(/\\n/g, '\n')}</p>
-          <Link href={`${announcement.link}`}><button className="btn btn-cta">Katıl</button></Link>
+          <Link href={`${announcement.link}`}><button className="btn btn-cta">{announcement.linkBtnText}</button></Link>
         </section>
       </main>
       <footer className="footer">

@@ -1,6 +1,5 @@
 @use "../abstracts" as abs;
 .hero{
-  margin-top: 10rem;
   grid-column: main-start / main-end;
   display: flex;
   flex-direction: column;
