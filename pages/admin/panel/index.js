@@ -19,7 +19,7 @@ export default function Panel(){
           withCredentials : true,
         });
         if(res.data) setIsLoggedIn(true);
-      }catch(error){setError(error.response.data.message || error.response.data)}
+      }catch(error){setError(error.response?.data?.message || error.response?.data)}
     })()
     //AUTOMATIC LOGOUT WHEN USER CLOSES THE TAB
     window.addEventListener('beforeunload', async (e) => {
@@ -29,7 +29,7 @@ export default function Panel(){
           url:`${process.env.NEXT_PUBLIC_API_URL}users/logout`,
           withCredentials : true,
         });
-      }catch(error){setError(error.response.data.message || error.response.data);}
+      }catch(error){setError(error.response?.data?.message || error.response?.data);}
     })
     return () => {window.removeEventListener('beforeunload',null)}
   },[])
@@ -42,8 +42,8 @@ export default function Panel(){
       </Head>
       <Header/>
       <main className="main">
+        {error && <Error/>}
         <section className="panel">
-          {error && <Error/>}
           {isLoggedIn ?
             <AdminProvider>
               <PanelWrapper/>
