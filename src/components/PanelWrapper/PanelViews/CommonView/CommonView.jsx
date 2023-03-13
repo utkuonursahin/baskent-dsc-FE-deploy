@@ -1,15 +1,15 @@
 import axios from "axios";
-import {useError} from "../../../context/ErrorContext";
-import Item from "./Item/Item";
-import DashboardButtons from "../DashboardButtons/DashboardButtons";
 import {useEffect} from "react";
-import {useAdmin} from "../../../context/AdminContext";
+import {useError} from "../../../../context/ErrorContext";
+import {useAdmin} from "../../../../context/AdminContext";
+import Item from "../Item/Item";
 
-const DashboardContent = () => {
-  const {type,setId,page,setPage,data, setData, isChanged} = useAdmin();
+
+const CommonView = ({type}) => {
+  const {setId,page,setPage,data, setData, isChanged} = useAdmin();
   const {setError} = useError();
   const handleSelection = (e) => {
-    let el = e.target.closest(".dashboard__content--element");
+    let el = e.target.closest("#item");
     if(!el) return;
     el.classList.toggle("selected")
     setId(prev => prev === el.dataset.id ? "" : el.dataset.id);
@@ -31,13 +31,12 @@ const DashboardContent = () => {
   }
   useEffect(()=>{getData()},[page,isChanged])
   return (
-    <div className="dashboard__content">
-      <div className="dashboard__content--elements" onClick={handleSelection}>
+    <div className="common__view">
+      <div className="common__view--elements" onClick={handleSelection}>
         {data.map((item,i)=>{return <Item key={item.id} data={item} index={i+1}/>})}
       </div>
-      <DashboardButtons/>
     </div>
   );
 };
 
-export default DashboardContent;
+export default CommonView;

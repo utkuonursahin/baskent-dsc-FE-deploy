@@ -1,11 +1,11 @@
-import axios from "axios";
-import {useAdmin} from "../../../../context/AdminContext";
-import {useError} from "../../../../context/ErrorContext";
-import {useReducer, useState} from "react";
 import Image from "next/image";
+import {useAdmin} from "../../../context/AdminContext";
+import {useError} from "../../../context/ErrorContext";
+import {useReducer} from "react";
+import axios from "axios";
 
-const AnnouncementPopup = ({mode, setIsOpened}) => {
-  const {data,id,type, setIsChanged} = useAdmin();
+const AnnouncementsPopup = ({type, mode, setIsOpened}) => {
+  const {data,id,setIsChanged} = useAdmin();
   const {setError} = useError();
   const currentAnnouncement = data.find((item) => item.id === id);
   const reducer = function(state,action){
@@ -127,4 +127,4 @@ const AnnouncementPopup = ({mode, setIsOpened}) => {
   );
 };
 
-export default AnnouncementPopup;
+export default AnnouncementsPopup;

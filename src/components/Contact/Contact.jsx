@@ -11,7 +11,7 @@ const Contact = () => {
         <Link href="https://www.linkedin.com/company/developer-students-community/"><img src="/linkedin.svg" alt="linkedin icon"/></Link>
         <Link href="https://www.instagram.com/baskentdsc/"><img src="/instagram.svg" alt="instagram icon"/></Link>
         <Link href="https://chat.whatsapp.com/FDtofP4pVxgBmbiaCw6BXr"><img src="/whatsapp.svg" alt="whatsapp icon"/></Link>
-        <Link href="https://discord.gg/wBQnWdU"><img src="/discord.svg" alt="discord icon"/></Link>
+        <Link href="https://discord.gg/dR5NRVRmf3"><img src="/discord.svg" alt="discord icon"/></Link>
       </div>
       <button className="btn btn-cta"><Link href="https://docs.google.com/forms/d/e/1FAIpQLSf_oiFNow0vfISCxanxsqQeaQdzcLqihYpYT9CdfqoQyekXXg/viewform?usp=sf_link" target="_blank">Bİze Ulaş</Link></button>
     </section>

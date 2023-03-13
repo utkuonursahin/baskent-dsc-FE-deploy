@@ -1,7 +1,8 @@
+import {useAdmin} from "../../../../context/AdminContext";
+import {useError} from "../../../../context/ErrorContext";
 import axios from "axios";
-import {useAdmin} from "../../../context/AdminContext";
-import {useError} from "../../../context/ErrorContext";
-const Redeploy = () => {
+
+const RedeployView = () => {
   const {setType} = useAdmin();
   const {setError} = useError();
   const handleRedeploy = async () => {
@@ -30,4 +31,4 @@ const Redeploy = () => {
   );
 };
 
-export default Redeploy;
+export default RedeployView;

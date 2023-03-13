@@ -1,11 +1,11 @@
-import Image from "next/image";
-import {useAdmin} from "../../../../context/AdminContext";
-import {useError} from "../../../../context/ErrorContext";
-import {useReducer} from "react";
+import {useReducer} from 'react';
+import {useAdmin} from "../../../context/AdminContext";
+import {useError} from "../../../context/ErrorContext";
 import axios from "axios";
+import Image from "next/image";
 
-const ExecutivePopup = ({mode, setIsOpened}) => {
-  const {data,id,type, setIsChanged} = useAdmin();
+const ExecutivesPopup = ({type, mode, setIsOpened}) => {
+  const {data,id,setIsChanged} = useAdmin();
   const {setError} = useError();
   const currentExecutive = data.find((item) => item.id === id);
   const reducer = function(state,action){
@@ -98,4 +98,4 @@ const ExecutivePopup = ({mode, setIsOpened}) => {
   );
 };
 
-export default ExecutivePopup;
+export default ExecutivesPopup;

@@ -2,9 +2,9 @@
 .panel {
   grid-column: main-start / main-end;
   width: 100%;
-  height: 85vh;
+  height: 100%;
   display: grid;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 1rem [main-start] 1fr [main-end] 1rem;
   & h1 {
     grid-column: 1 / 3;
     grid-row: 1 / -1;
@@ -20,28 +20,146 @@
       font-size: 1.6rem;
     }
   }
-  &__sidebar {
-    grid-column: 1 /2;
-    grid-row: 1 / -1;
-    background-color: rgba(abs.$color-white,.1);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    & h3{
-      padding: 2rem 0;
-      width: 100%;
-      border-bottom: .2rem solid abs.$color-tertiary;
-    }
-    &-list{
-      list-style: none;
-      display:flex;
+
+  &-wrapper{
+    position: relative;
+    grid-column: main-start / main-end;
+    border: .25rem solid abs.$color-primary;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 1fr 10rem;
+    min-height: 85vh;
+    border-radius: .35rem;
+    & .panel__menu {
+      grid-column: 1 /2;
+      grid-row: 1 / -1;
+      background-color: rgba(abs.$color-white, .1);
+      display: flex;
       flex-direction: column;
       align-items: center;
-      width: 100%;
-      &-item{
-        text-align: center;
+      border-right: .25rem solid abs.$color-primary;
+      & h3 {
+        padding: 2rem 0;
         width: 100%;
+        border-bottom: .2rem solid abs.$color-tertiary;
       }
+
+      &--list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        &-item {
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+
+    & .panel-views{
+      padding: .2rem .2rem;
+    }
+
+    & .common__view{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &--elements{
+        display: flex;
+        flex-direction: column;
+      }
+      & #item {
+        height: 3rem;
+        padding: .5rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba( abs.$color-white,.95);
+        cursor: pointer;
+        &:hover{
+          background-color: rgba( abs.$color-white,.8);
+        }
+        &:not(:first-of-type){
+          border-top: .1rem solid abs.$color-dark;
+        }
+        & p {
+          display: inline-block;
+          overflow: hidden;
+          width: 13rem;
+          color: abs.$color-dark;
+          font-size: 1.6rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: center;
+          letter-spacing: 1.2px; font-family: abs.$font-secondary;
+        }
+        & span{
+          font-family: abs.$font-secondary;
+          color: abs.$color-dark;
+          font-size: 1.6rem;
+          font-weight: 300;
+        }
+        &.selected{
+          background-color: abs.$color-primary;
+        }
+      }
+    }
+
+    & .panel__buttons{
+      grid-column: 2 / -1;
+      border-top: .2rem solid abs.$color-primary;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      align-self: end;
+    }
+
+    & .panel-popups{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: abs.$color-dark;
+      padding: 1rem 0;
+      & h1{text-transform: capitalize;}
+      & .close-icon{
+        cursor: pointer;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 3rem;
+        height: 3rem;
+      }
+      &.active{
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+      }
+    }
+
+    & .redeploy{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3.5rem;
+      padding: 0 2.5rem;
+      & p{
+        text-align: justify;
+        font-size: 1.6rem;
+        color: abs.$color-white;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        & span{
+          color: abs.$color-primary;
+          font-weight: abs.$font-bold;
+        }
+      };
     }
   }
 }

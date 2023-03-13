@@ -3,11 +3,10 @@ import Link from "next/link";
 import Head from "next/head";
 import Header from "../../../src/components/Header/Header";
 import {useEffect, useState} from "react";
-import Sidebar from "../../../src/components/Sidebar/Sidebar";
-import Dashboard from "../../../src/components/Dashboard/Dashboard";
 import {AdminProvider} from "../../../src/context/AdminContext";
 import {useError} from "../../../src/context/ErrorContext";
 import Error from "../../../src/components/Error/Error";
+import PanelWrapper from "../../../src/components/PanelWrapper/PanelWrapper";
 export default function Panel(){
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const {error,setError} = useError();
@@ -43,15 +42,18 @@ export default function Panel(){
       </Head>
       <Header/>
       <main className="main">
-        {error && <Error/>}
         <section className="panel">
+          {error && <Error/>}
           {isLoggedIn ?
-            <>
-              <AdminProvider>
-                <Sidebar/>
-                <Dashboard/>
-              </AdminProvider>
-            </> : <h1 className="heading-1">Yönlendiriliyorsunuz...<span>Ulaşamıyor musunuz? <Link href="/admin">Tekrar giriş yapmayı deneyin</Link> </span></h1>
+            <AdminProvider>
+              <PanelWrapper/>
+            </AdminProvider>
+            : <h1 className="heading-1">
+              Yönlendiriliyorsunuz...
+              <span>Ulaşamıyor musunuz?
+                  <Link href="/admin">Tekrar giriş yapmayı deneyin</Link>
+              </span>
+            </h1>
           }
         </section>
       </main>

@@ -1,6 +1,6 @@
 const Item = ({data,index}) => {
   return (
-    <div className="dashboard__content--element" data-id={data.id}>
+    <div id="item" data-id={data.id}>
       <span>{index}</span>
       <p>{data.name}</p>
       <p>{data.id || data._id}</p>
