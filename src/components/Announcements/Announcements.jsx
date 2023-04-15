@@ -10,7 +10,8 @@ const Announcements = () => {
   useEffect(() => {
     (async () => {
       try{
-        const {data:response} = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}announcements?page=${page+1}&limit=3`)
+        if(page === 1) return;
+        const {data:response} = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}announcements?page=${page}&limit=3`)
         if(!response.results) return
         const newAnnouncements = response?.data?.data
         if(newAnnouncements.length) setAnnouncements([...announcements,...newAnnouncements])

@@ -10,7 +10,7 @@ function SliderContainer() {
   const {announcements, setPage} = useAnnouncement();
   //Handle Real Index Change
   const handleRIC = (swiper) => {
-    if((swiper.realIndex+1) === announcements.length - 3) {
+    if((swiper.realIndex) + 1 === announcements.length) {
         return setPage((prevPage) => prevPage + 1);
     }
   };
