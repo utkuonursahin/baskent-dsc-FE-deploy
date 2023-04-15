@@ -54,7 +54,10 @@
           height: inherit;
           object-fit: cover;
           opacity: .1;
-          @media only screen and (min-width: abs.$bp-medium){opacity: 1;}
+          @media only screen and (min-width: abs.$bp-medium){
+            border-radius: .5rem 0 0 .5rem;
+            opacity: 1;
+          }
         }
         & button{z-index: 1;}
         @media only screen and (min-width: abs.$bp-small){
