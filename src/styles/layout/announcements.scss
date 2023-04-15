@@ -55,7 +55,7 @@
           object-fit: cover;
           opacity: .1;
           @media only screen and (min-width: abs.$bp-medium){
-            border-radius: .5rem 0 0 .5rem;
+            border-radius: .35rem 0 0 .35rem;
             opacity: 1;
           }
         }
