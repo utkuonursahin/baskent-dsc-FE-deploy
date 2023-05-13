@@ -1,8 +1,9 @@
-import {Pagination, EffectFade} from "swiper";
+import {Pagination, Navigation, EffectFade} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import "swiper/css/navigation";
 import SliderContent from "../SliderContent/SliderContent";
 import {useAnnouncement} from "../../../context/AnnouncementContext";
 
@@ -15,7 +16,8 @@ function SliderContainer() {
     }
   };
   return (
-    <Swiper modules={[Pagination, EffectFade]} pagination={{dynamicBullets:true}} spaceBetween={100} slidesPerView={1} effect={"fade"} onRealIndexChange={handleRIC}>
+    <Swiper modules={[Pagination, Navigation,EffectFade]} navigation={true} pagination={{dynamicBullets:true}}
+            spaceBetween={100} slidesPerView={1} effect={"fade"} onRealIndexChange={handleRIC}>
       {announcements.map((announcement,i) => {
         return (
           <SwiperSlide key={announcement.id + i}>

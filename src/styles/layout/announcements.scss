@@ -8,7 +8,7 @@
   & .swiper{
     width: 90vw !important;
     height: 60vw !important;
-    padding: .25rem;
+    padding: .5rem;
     @media only screen and (min-width: abs.$bp-smallest){
       width: 80vw !important;
       height: 50vw !important;
@@ -31,21 +31,28 @@
         width: 100%;
         height: 100%;
         position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 1.75rem;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 3rem 1fr 3rem;
+        justify-items: center;
         background-color: abs.$color-dark;
         border-radius: .5rem;
-        & h3{z-index: 1;}
+        & h3{
+          grid-column: 2 / 3;
+          align-self: center;
+          color: abs.$color-primary;
+          font-size: 1.8rem;
+          z-index: 1;
+          text-align: center;
+        }
         & p{
+          grid-column: 2 / 3;
           font-size: min(1.4rem, 4vw);
           font-family: abs.$font-secondary;
           text-align: center;
           opacity: 1;
           color: abs.$color-white;
           white-space: pre-wrap;
+          align-self: center;
         }
         & img{
           position: absolute;
@@ -59,30 +66,36 @@
             opacity: 1;
           }
         }
-        & button{z-index: 1;}
+        & button{
+          grid-column: 2 / 3;
+          z-index: 1;
+        }
         @media only screen and (min-width: abs.$bp-small){
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
+          grid-template-columns: 4fr 2fr 5rem;
           grid-template-rows: repeat(3,1fr);
           justify-items: center;
           gap: 0;
           & h3{
-            grid-column:-3 / -1;
+            font-size: 2.4rem;
+            grid-column: 2 / 3;
             grid-row: 1 / 2;
-            text-align: center;
+            align-self: end;
           }
           & p{
-            grid-column: -3 / -1;
+            font-size: 1.8rem;
+            grid-column: 2 / 3;
             grid-row: 2 / 3;
             white-space: pre-wrap;
           }
           & img{
             position: relative;
-            grid-column: 1 / -3;
+            grid-column: 1 / 2;
             grid-row: 1 / -1;
           }
           & button{
-            grid-column: -3 / -1;
+            align-self: start;
+            grid-column: 2 / 3;
           }
         }
       }
