@@ -12,7 +12,7 @@ const Features = () => {
   }
   return (
     <section className="features">
-      <h2 className="heading-2">DSC ile</h2>
+      <h2 className="heading-2">Bizimle Birlikte</h2>
       <nav className="features__nav">
         <ul className="features__nav-list" onClick={handleClick}>
           <li>
