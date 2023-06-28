@@ -1,7 +1,7 @@
 import Head from "next/head";
 import {useRouter} from "next/router";
 import Header from "../../src/components/Header/Header";
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import axios from "axios";
 import Link from "next/link";
 import {useError} from "../../src/context/ErrorContext";

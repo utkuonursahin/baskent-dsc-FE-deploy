@@ -1,4 +1,4 @@
-import AnnouncementsView from "./AnnouncementView/AnnouncementsView";
+import AnnouncementsView from "./AnnouncementsView/AnnouncementsView";
 import ExecutivesView from "./ExecutivesView/ExecutivesView";
 import CommonView from "./CommonView/CommonView";
 import RedeployView from "./RedeployView/RedeployView";

@@ -1,9 +1,9 @@
 import PanelMenu from "./PanelMenu/PanelMenu";
 import {useState} from "react";
 import PanelViews from "./PanelViews/PanelViews";
-import PanelButtons from "./PanelButtonss/PanelButtons";
+import PanelButtons from "./PanelButtons/PanelButtons";
 
-const PanelWrapper = () => {
+const PanelContainer = () => {
   const [type,setType] = useState("dsc")
   return (
     <section className="panel-wrapper">
@@ -14,4 +14,4 @@ const PanelWrapper = () => {
   );
 };
 
-export default PanelWrapper;
+export default PanelContainer;

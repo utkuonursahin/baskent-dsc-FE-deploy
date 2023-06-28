@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useAdmin} from "../../../context/AdminContext";
 import Image from "next/image";
-import PanelPopups from "../PanelPopups/PanelPopups";
+import PanelModal from "../PanelModals/PanelModal";
 
 function PanelButtons({type}) {
   const [isOpened, setIsOpened] = useState(false);
@@ -20,7 +20,7 @@ function PanelButtons({type}) {
       <button className="btn btn-update btn-panel" data-action="update">Update</button>
       <button className="btn btn-delete btn-panel" data-action="delete">Delete</button>
       <button className="btn btn-page" onClick={()=>{setPage(prev=>prev+1)}}><Image width={50} height={50} src="/chevrons-right.svg" alt="icon-right"/></button>
-      {isOpened && <PanelPopups type={type} mode={mode} isOpened={isOpened} setIsOpened={setIsOpened}/>}
+      {isOpened && <PanelModal type={type} mode={mode} isOpened={isOpened} setIsOpened={setIsOpened}/>}
     </nav>
   );
 }

@@ -6,11 +6,14 @@ import {useEffect, useState} from "react";
 import {AdminProvider} from "../../../src/context/AdminContext";
 import {useError} from "../../../src/context/ErrorContext";
 import Error from "../../../src/components/Error/Error";
-import PanelWrapper from "../../../src/components/PanelWrapper/PanelWrapper";
+
 export default function Panel(){
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const {error,setError} = useError();
+
   useEffect(()=>{
+    let ignore = false;
+
     (async ()=> {
       try{
         const {data:res} = await axios({
@@ -18,8 +21,10 @@ export default function Panel(){
           url:`${process.env.NEXT_PUBLIC_API_URL}users/isLoggedIn`,
           withCredentials : true,
         });
-        if(res.data) setIsLoggedIn(true);
-      }catch(error){setError(error.response?.data?.message || error.response?.data)}
+        if(res.data && !ignore) setIsLoggedIn(true);
+      }catch(error){
+        setError(error.response?.data?.message || error.response?.data)
+      }
     })()
     //AUTOMATIC LOGOUT WHEN USER CLOSES THE TAB
     window.addEventListener('beforeunload', async (e) => {
@@ -29,10 +34,17 @@ export default function Panel(){
           url:`${process.env.NEXT_PUBLIC_API_URL}users/logout`,
           withCredentials : true,
         });
-      }catch(error){setError(error.response?.data?.message || error.response?.data);}
+      }catch(error){
+        setError(error.response?.data?.message || error.response?.data);
+      }
     })
-    return () => {window.removeEventListener('beforeunload',null)}
+    //CLEANUP
+    return () => {
+      window.removeEventListener('beforeunload',null);
+      ignore = true;
+    }
   },[])
+
   return (
     <div className="page-wrapper">
       <Head>
@@ -46,7 +58,7 @@ export default function Panel(){
         <section className="panel">
           {isLoggedIn ?
             <AdminProvider>
-              <PanelWrapper/>
+              <Panel/>
             </AdminProvider>
             : <h1 className="heading-1">
               Yönlendiriliyorsunuz...

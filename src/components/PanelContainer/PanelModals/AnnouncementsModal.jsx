@@ -4,7 +4,7 @@ import {useError} from "../../../context/ErrorContext";
 import {useReducer} from "react";
 import axios from "axios";
 
-const AnnouncementsPopup = ({type, mode, setIsOpened}) => {
+const AnnouncementsModal = ({type, mode, setIsOpened}) => {
   const {data,id,setIsChanged} = useAdmin();
   const {setError} = useError();
   const currentAnnouncement = data.find((item) => item.id === id);
@@ -127,4 +127,4 @@ const AnnouncementsPopup = ({type, mode, setIsOpened}) => {
   );
 };
 
-export default AnnouncementsPopup;
+export default AnnouncementsModal;

@@ -4,7 +4,7 @@ import {useError} from "../../../context/ErrorContext";
 import axios from "axios";
 import Image from "next/image";
 
-const ExecutivesPopup = ({type, mode, setIsOpened}) => {
+const ExecutivesModal = ({type, mode, setIsOpened}) => {
   const {data,id,setIsChanged} = useAdmin();
   const {setError} = useError();
   const currentExecutive = data.find((item) => item.id === id);
@@ -98,4 +98,4 @@ const ExecutivesPopup = ({type, mode, setIsOpened}) => {
   );
 };
 
-export default ExecutivesPopup;
+export default ExecutivesModal;
