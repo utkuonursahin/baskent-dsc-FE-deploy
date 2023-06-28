@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {AdminProvider} from "../../../src/context/AdminContext";
 import {useError} from "../../../src/context/ErrorContext";
 import Error from "../../../src/components/Error/Error";
+import PanelContainer from "../../../src/components/PanelContainer/PanelContainer";
 
 export default function Panel(){
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -58,7 +59,7 @@ export default function Panel(){
         <section className="panel">
           {isLoggedIn ?
             <AdminProvider>
-              <Panel/>
+              <PanelContainer/>
             </AdminProvider>
             : <h1 className="heading-1">
               Yönlendiriliyorsunuz...
